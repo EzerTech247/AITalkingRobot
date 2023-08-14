@@ -1,0 +1,38 @@
+#include <LiquidCrystal.h>
+
+// Pin definitions for temperature sensor, relay, and LCD
+const int tempSensorPin = A0;
+const int relayPin = 2;
+const int rs = 12, en = 11, d4 = 5, d5 = 4, d6 = 3, d7 = 6;
+LiquidCrystal lcd(rs, en, d4, d5, d6, d7);
+
+// Set your desired temperature in Celsius
+const int desiredTemp = 300;  // Adjust as needed
+
+void setup() {
+  pinMode(relayPin, OUTPUT);
+  digitalWrite(relayPin, LOW); // Turn off relay initially
+  
+  lcd.begin(16, 2);
+  lcd.print("Soldering Station");
+  lcd.setCursor(0, 1);
+  lcd.print("Temp: -- C");
+  delay(2000);
+}
+
+void loop() {
+  int tempReading = analogRead(tempSensorPin);
+  float tempCelsius = (tempReading * 5.0 / 1023) * 100.0;
+  
+  lcd.setCursor(6, 1);
+  lcd.print(tempCelsius, 1);
+  lcd.print(" C");
+  
+  if (tempCelsius < desiredTemp) {
+    digitalWrite(relayPin, HIGH); // Turn on relay to heat up
+  } else {
+    digitalWrite(relayPin, LOW);  // Turn off relay when desired temperature is reached
+  }
+  
+  delay(1000); // Update temperature reading every 1 second
+}
