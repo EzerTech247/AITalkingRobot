@@ -1,1 +1,29 @@
-
+Components Required to build Digital Soldering Iron Controller
+ATMEGA328P-AU x1
+IRLR7843 MOSFET x1
+78M05 x1
+LMV358IDR x1
+16MHZ Crystal /Resonator x1
+128x64 0.96” OLED x1
+SS34 Diode x1
+1N4148W Diode x1
+5V1 Zener Diode x1
+18V Zener Diode x1
+S8050 Transistor SOT-23 x1
+3x6x2.5 SMD Switch
+Rotary Encoder EC11
+MLT-5030 SMD Buzzer x1
+100n 0603 Capacitor x5
+47u 1206 Capacitor x1
+22p 0603 Capacitor x2
+10u 1206 Capacitor x1
+2n2 0603 Capacitor x1
+330n 0603 Capacitor x1
+22u 1206 Capacitor x1
+1u 0603 Capacitor x1
+10k 0603 Resistor x9
+1k5 0603 Resistor x1
+1k 0603 Resistor x1
+200k 0603 Resistor x1
+1k 1206 Resistor x1
+47k 0603 Resistor x1
